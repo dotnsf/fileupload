@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  description: Fileupload API ドキュメント
+  version: 0.0.1
+  title: Fileupload API
+host: localhost:8080
+basePath: /
+tags:
+  - name: etc
+    description: API for file
+schemes:
+  - http
+  - https
+paths:
+  /test:
+    get:
+      tags:
+        - etc
+      summary: テスト
+      description: テスト
+      produces:
+        - application/json
+      parameters:
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+  /upload:
+    post:
+      tags:
+        - etc
+      summary: アップロード
+      description: アップロード
+      produces:
+        - application/json
+      parameters:
+        - name: file
+          type: file
+          in: formData
+          description: アップロードするファイル
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
